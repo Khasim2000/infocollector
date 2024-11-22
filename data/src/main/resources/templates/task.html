@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Details Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #d2b48c; /* Light Brown */
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80vh;
+        height: 80vh;
+        overflow-y: auto;
+    }
+    .container h2 {
+        color: #007bbf;
+    }
+    .form-group label {
+        color: #333;
+    }
+    .btn-primary {
+        background-color: #007bbf;
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #005f87;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2 class="text-center">Task Details Form</h2>
+  <form action="/saveTask" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="taskName">Task Name:</label>
+      <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Enter task name">
+    </div>
+    <div class="form-group">
+      <label for="taskDescription">Task Description:</label>
+      <textarea class="form-control" id="taskDescription" name="taskDescription" rows="4" placeholder="Enter task description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="assigneeName">Assignee Name:</label>
+      <input type="text" class="form-control" id="assigneeName" name="assigneeName" placeholder="Enter assignee name">
+    </div>
+    <div class="form-group">
+      <label for="assigneeEmail">Assignee Email:</label>
+      <input type="email" class="form-control" id="assigneeEmail" name="assigneeEmail" placeholder="Enter assignee email">
+    </div>
+    <div class="form-group">
+      <label for="attachment">Attachments:</label>
+      <input type="file" class="form-control-file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

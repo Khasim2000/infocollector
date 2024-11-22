@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f8ff; /* Light blue background */
+      margin: 0;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    h2 {
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeIn 2s;
+    }
+
+    #loginContainer {
+      padding: 20px;
+      border: 2px solid #87ceeb; /* Blue border */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      text-align: center;
+      animation: slideIn 2s;
+    }
+
+    label {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      animation: zoomIn 1s;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00008b; /* Dark blue button */
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      animation: fadeIn 2s;
+    }
+
+    button:hover {
+      background-color: #32cd32; /* Green on hover */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<h2>Login Page</h2>
+
+<div id="loginContainer"></div>
+
+<script>
+  // Create HTML elements using JavaScript
+  var loginContainer = document.getElementById('loginContainer');
+
+  // Username field
+  var usernameLabel = document.createElement('label');
+  usernameLabel.htmlFor = 'username';
+  usernameLabel.innerText = 'Username:';
+  loginContainer.appendChild(usernameLabel);
+
+  var usernameInput = document.createElement('input');
+  usernameInput.type = 'text';
+  usernameInput.id = 'username';
+  usernameInput.name = 'username';
+  usernameInput.required = true;
+  loginContainer.appendChild(usernameInput);
+  loginContainer.appendChild(document.createElement('br'));
+
+  // Password field
+  var passwordLabel = document.createElement('label');
+  passwordLabel.htmlFor = 'password';
+  passwordLabel.innerText = 'Password:';
+  loginContainer.appendChild(passwordLabel);
+
+  var passwordInput = document.createElement('input');
+  passwordInput.type = 'password';
+  passwordInput.id = 'password';
+  passwordInput.name = 'password';
+  passwordInput.required = true;
+  loginContainer.appendChild(passwordInput);
+  loginContainer.appendChild(document.createElement('br'));
+
+  // Login button
+  var loginButton = document.createElement('button');
+  loginButton.type = 'button';
+  loginButton.innerText = 'Login';
+  loginButton.onclick = validate;
+  loginContainer.appendChild(loginButton);
+
+  // Validation function
+  function validate() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      if (username === 'khasim' && password === 'basha') {
+          window.location.href = '/dashboard';
+      } else {
+          alert('Incorrect username or password.');
+      }
+  }
+</script>
+</body>
+</html>

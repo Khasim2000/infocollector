@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h2 class="text-center">Admin Page</h2>
+  <form action="/getTask" method="post">
+    <div class="form-group">
+      <label for="taskName">Task Name:</label>
+      <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Enter task name">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <div id="taskDetails" style="margin-top: 20px;" th:if="${task != null}">
+    <h3>Task Details</h3>
+    <p><strong>Task Name:</strong> <span th:text="${task.taskName}">Task Name</span></p>
+    <p><strong>Task Description:</strong> <span th:text="${task.taskDescription}">Task Description</span></p>
+    <p><strong>Assignee Name:</strong> <span th:text="${task.assigneeName}">Assignee Name</span></p>
+    <p><strong>Assignee Email:</strong> <span th:text="${task.assigneeEmail}">Assignee Email</span></p>
+    <p><strong>Attachment:</strong> <span th:text="${task.attachment != null ? 'Available' : 'Not Available'}">Attachment</span></p>
+  </div>
+
+  <div id="message" style="margin-top: 20px;" th:if="${message != null}">
+    <p class="text-danger" th:text="${message}">Message</p>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

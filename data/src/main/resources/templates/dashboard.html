@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        animation: backgroundChange 10s infinite;
+    }
+
+    @keyframes backgroundChange {
+        0% { background-color: #e0f7fa; }    /* Sky Blue */
+        20% { background-color: #b3e5fc; }  /* Lighter Sky Blue */
+        40% { background-color: #a7a5db; }  /* Light Purple */
+        60% { background-color: #9fa8da; }  /* Purple */
+        80% { background-color: #7986cb; }  /* Light Navy Blue */
+        100% { background-color: #e0f7fa; } /* Sky Blue */
+    }
+
+    .dashboard {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .dashboard h2 {
+        margin-bottom: 20px;
+        color: #1e3a8a; /* Navy Blue */
+        font-size: 28px;
+    }
+
+    .dashboard button {
+        margin: 15px;
+        padding: 15px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #1e3a8a; /* Navy Blue */
+        color: white;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .dashboard button:hover {
+        background-color: #3949ab; /* Darker Navy Blue */
+        transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+<div class="dashboard">
+  <h2>Dashboard</h2>
+  <button>PIC</button>
+  <button>BFDC</button>
+  <button id="ptmButton">PTM</button>
+  <button>ETDC</button>
+</div>
+
+<script>
+  document.getElementById('ptmButton').addEventListener('click', function() {
+    window.location.href = '/forms';
+  });
+</script>
+</body>
+</html>
